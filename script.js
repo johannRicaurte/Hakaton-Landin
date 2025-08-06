@@ -24,6 +24,18 @@ function addCarrito(id) {
     }
 }
 
+//Funcion para eliminar producto de la lista
+function deleteProduct(id) {
+  // Elimina solo el primer producto que coincida con el id
+  const index = carritoArray.findIndex(producto => producto.id === id);
+  if (index !== -1) {
+    carritoArray.splice(index, 1);
+    localStorage.setItem("carrito", JSON.stringify(carritoArray));
+    // Actualiza el modal y el total
+    mostrarModalCarrito();
+  }
+}
+
 //funcion para calcular el total de El carrito 
 function calcularTotal()
 {
@@ -56,6 +68,7 @@ function mostrarModalCarrito() {
         <img src="producto${producto.id}.jpg" alt="${producto.nombre}">
         <h3>${producto.nombre}</h3>
         <p class="precio">$${producto.precio.toLocaleString()}</p>
+         <button onclick="deleteProduct(${producto.id})">Eliminar</button>
       </article>
     `;
   });
