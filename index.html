@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <header>
+    <nav class="navbar">
+      <div class="logo">MiTienda</div>
+      <ul class="nav-links">
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#carrito">Carrito</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <div class="cart-icon">
+        🛒<span class="cart-count">0</span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 🎯 HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Bienvenido a MiTienda</h1>
+      <p>Compra los mejores productos al mejor precio.</p>
+      <a href="#productos" class="btn">Ver productos</a>
+    </div>
+  </section>
+
+<article class="producto-card" data-id="1">
+  <img src="producto1.jpg" alt="Producto 1">
+  <h3>Producto 1</h3>
+  <p class="precio">$19.99</p>
+  <button class="btn-agregar" onclick="addCarrito(2)">Agregar al carrito</button>
+</article>
+
+      <!-- 🛒 CARRITO -->
+    <section id="carrito" class="carrito">
+      <h2>Tu Carrito</h2>
+      <div class="carrito-items">
+        <!-- Aquí se insertarán dinámicamente los productos agregados -->
+        <p>El carrito está vacío.</p>
+      </div>
+      <div class="carrito-total">
+        <p>Total: $<span id="total">0.00</span></p>
+        <button class="btn-comprar">Finalizar compra</button>
+      </div>
+    </section>
+  </main>
+
+
+<script src="script.js"></script>
+</body>
+</html>
