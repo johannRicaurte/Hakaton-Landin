@@ -85,7 +85,7 @@ function mostrarModalCarrito() {
   carritoArray.forEach(producto => {
     cards += `
       <article class="producto-card" data-id="${producto.id}">
-        <img src="producto${producto.id}.jpg" alt="${producto.nombre}">
+         <img src="${producto.imagen}" alt="${producto.nombre}">
         <h3>${producto.nombre}</h3>
         <p class="precio">$${producto.precio.toLocaleString()}</p>
          <button onclick="deleteProduct(${producto.id})">Eliminar</button>
