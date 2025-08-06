@@ -9,7 +9,7 @@
     <link href="styleheader.css" rel="stylesheet" />
 </head>
 
-<body>
+<body onload="mostrarProductosTienda()">
 
     <!-- Header superior -->
     <header class="bg-light py-3 border-bottom">
@@ -25,7 +25,7 @@
             <div class="d-flex gap-3 align-items-center">
                 <input type="text" class="form-control" placeholder="Buscar productos..." />
                 <a href="#" class="btn btn-outline-primary">Mi cuenta</a>
-                <a href="#" class="btn btn-outline-success">Mi carrito</a>
+                <a href="#carrito" class="btn btn-outline-success" id="showCarrito" onclick="mostrarModalCarrito()">Mi Carrito [<span id="carritodata"></span>] </a>
             </div>
         </div>
     </header>
@@ -71,82 +71,41 @@
         <div class="modal-content">
             <span class="close" onclick="cerrarModal()">&times;</span>
             <h2>Productos en el Carrito</h2>
-            <div id="productosCarrito"></div>
+            <section id="products"></section>
             <div class="modal-total">
-                <p>Total: $<span id="totalModal">0.00</span></p>
+                <p>Total: <span id="totalFactura">0.00</span></p>
                 <button class="btn-comprar">Finalizar compra</button>
             </div>
         </div>
     </div>
 
-  <body>
     <!--PRODUCTOS DESTACADOS-->
-    <section class="productos-destacados">
+    <section class="productos-destacados" id="productos">
         <h2>PRODUCTOS DESTACADOS</h2>
         <div class="imagenes-productos-destacados">
-
-            <div class="productodestacado">
-              <div class="imagen-productoX">
-              <img src="img-paula\vdb-mujer.jpg" alt="Vestido">
-          
-            
-                </div>
-            <p class="categoria">Vestido de baño mujer</p>
-            <p class="tallas">XS   S   M   L   XL</p>
-            <p class="precio">$150.000</p>
-            </div>
-
-            <div class="productodestacado">
-              <div class="imagen-productoY">
-              <img src="img-paula\gafas-piscina.webp" alt="gafas">
-
-                </div>
-            <p class="categoria">Gafas para piscina</p>
-            <p class="precio">$120.000</p>
-            </div>
-
-            <div class="productodestacado">
-                <div class="imagen-productoZ">
-                <img src="img-paula\productoZ.jpg" alt="camiseta">
-                
-                </div>
-            <p class="categoria">Camiseta manga larga</p>
-            <p class="tallas">XS   S   M   L   XL</p>
-            <p class="precio">$200.000</p>
-            </div>
-
-            <div class="producto-destacado">
-                <div class="imagen-productoW">
-                <img src="img-paula\ProductoW.webp" alt="pantaloneta">
-                </div>
-            <p class="categoria">Pantaloneta para piscina/p>
-            <p class="tallas">XS   S   M   L   XL</p>
-            <p class="precio">$140.000</p>
-            </div>
-
+            <!-- Los productos se llenan dinámicamente con mostrarProductosTienda() -->
         </div>
     </section>
     <!-- FINAL PRODUCTOS DESTACADOS -->
 
     <!--INICIO FOOTER-->
-
     <footer class="footer">
         <div class="footer-características">
             <div class="caracteristica">
                 <div class="icono-calidad">
-                    <img src="img-paula\icono-calidad.png" alt="Calidad">
+                    <img src="img-paula/icono-calidad.png" alt="Calidad">
                 </div>
                 <p>Calidad 100% garantizada</p>
             </div>
             <div class="caracteristica">
                 <div class="icono-envios">
-                    <img src="img-paula\icono-envios.png" alt="Envios">
+                    <img src="img-paula/icono-envios.png" alt="Envios">
                 </div>
                 <p>Envíos gratis por compras mayores a $200.000</p>
             </div>
             <div class="caracteristica">
                 <div class="icono-pagos">
-                    <img src="img-paula\icono-pagos.png" alt="Pagos">
+                    <img src="img-paula/icono-pagos.png" alt="Pagos">
                 </div>
                 <p>Compra segura con variedad de métodos de pago</p>
             </div>
@@ -159,14 +118,14 @@
                 <form>
                     <input type="text" name="" id="Nombre">
                     <input type="text" name="" id="Email">
-                    <button type="submit">SUSCRIBIRME</but>
+                    <button type="submit">SUSCRIBIRME</button>
                 </form>
             </div>
             <div class="redes-sociales">
                 <p>Siguenos en nuestras redes sociales</p>
                 <div class="iconos-redes">
-                    <img src="img-paula\icono-fb .png" alt="Facebook">
-                    <img src="img-paula\icono-ig.png" alt="Instagram">
+                    <img src="img-paula/icono-fb .png" alt="Facebook">
+                    <img src="img-paula/icono-ig.png" alt="Instagram">
                 </div>
             </div>
             </div>
@@ -189,11 +148,13 @@
         </div>
         <!-- Imagenes de método de pago-->
         <div class="imagenes-pago">
-            <img src="img-paula\visa-icono.jpg" alt="Pago con VISA">
-            <img src="img-paula\pse.jpg" alt="Pago con PSE">
-            <img src="img-paula\mastercard.webp" alt="Pago con debito">
-            <img src="img-paula\mercado-pago.png" alt="Pago con MP">
+            <img src="img-paula/visa-icono.jpg" alt="Pago con VISA">
+            <img src="img-paula/pse.jpg" alt="Pago con PSE">
+            <img src="img-paula/mastercard.webp" alt="Pago con debito">
+            <img src="img-paula/mercado-pago.png" alt="Pago con MP">
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

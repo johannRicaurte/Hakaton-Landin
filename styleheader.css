@@ -329,10 +329,19 @@ body {
     object-fit: contain;
 }
 
-.imagen-productoX img, .imagen-productoY img, .imagen-productoZ img, .imagen-productoW img {
-  width: 100%;
+/* Ajuste general para las imágenes de productos destacados */
+.imagenes-productos-destacados img {
+  width: 180px;
   height: 180px;
-  object-fit: cover; 
-  border-radius: 8px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(27, 55, 94, 0.08);
   display: block;
+  margin: 0 auto 10px auto;
+  transition: transform 0.2s;
+}
+
+.imagenes-productos-destacados img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(27, 55, 94, 0.18);
 }
