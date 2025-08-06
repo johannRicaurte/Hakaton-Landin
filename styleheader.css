@@ -1,0 +1,338 @@
+/* Paleta AquaFit */
+:root {
+  --azul-oscuro: #1B375E;
+  --azul-medio: #2F5D9A;
+  --azul-claro: #6BAFE3;
+  --rojo-intenso: #BD202F;
+  --amarillo-energico: #EFB819;
+}
+
+/* Fondo general del header */
+header.banner,
+.bg-light {
+  background-color: var(--azul-claro);
+  color: #fff;
+}
+
+/* Títulos y textos destacados */
+h1, h2, h3 {
+  color: var(--azul-oscuro);
+}
+
+p {
+  color: var(--azul-medio);
+}
+
+/* Botones personalizados */
+.btn-outline-primary {
+  border-color: var(--azul-medio);
+  color: var(--azul-medio);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--azul-medio);
+  color: white;
+}
+
+.btn-outline-success {
+  border-color: var(--amarillo-energico);
+  color: var(--amarillo-energico);
+}
+
+.btn-outline-success:hover {
+  background-color: var(--amarillo-energico);
+  color: #1B375E;
+}
+
+/* Navegación */
+nav.bg-primary {
+  background-color:  #1B375E ;
+}
+
+
+.nav-link.text-white:hover {
+  color: var(--amarillo-energico);
+}
+
+/* Carrusel */
+.carousel-item {
+  height: 400px;
+}
+
+.carousel-item img {
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* Modal */
+.modal-content {
+  background-color: var(--azul-claro);
+  border: 2px solid var(--azul-oscuro);
+  color: var(--azul-oscuro);
+}
+
+.btn-comprar {
+  background-color: var(--rojo-intenso);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.btn-comprar:hover {
+  background-color: var(--amarillo-energico);
+  color: var(--azul-oscuro);
+}
+
+/* Fondo semitransparente detrás del modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(27, 55, 94, 0.6); /* azul oscuro con transparencia */
+  display: none;
+  z-index: 1000;
+}
+
+/* Panel lateral derecho */
+.modal-content {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  max-width: 90%;
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  overflow-y: auto;
+  animation: slideIn 0.4s ease forwards;
+}
+
+/* Animación de entrada */
+@keyframes slideIn {
+  from {
+    right: -400px;
+    opacity: 0;
+  }
+  to {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+/* Botón de cierre */
+.close {
+  font-size: 24px;
+  font-weight: bold;
+  color: #BD202F; /* rojo intenso AquaFit */
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+/* Título y total */
+.modal-content h2 {
+  color: #1B375E; /* azul oscuro AquaFit */
+  margin-bottom: 20px;
+}
+
+.modal-total {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #2F5D9A; /* azul medio AquaFit */
+}
+
+/* Botón de compra */
+.btn-comprar {
+  background-color: #BD202F;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-comprar:hover {
+  background-color: #EFB819; /* amarillo energético */
+  color: #1B375E;
+}
+
+/* Tamaño del logo AquaFit */
+header img {
+  height: 100px; /* Puedes subirlo a 100px si quieres más impacto */
+  width: auto;
+}
+@media (max-width: 768px) {
+  header img {
+    height: 60px;
+  }
+}
+/*PARTE LINA */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+    color: #1b375e;
+}
+
+.productos-destacados h2{
+    font-size: 28px;
+    background-color: #2f5d9a;
+    text-align: center;
+}
+
+.imagenes-productos-destacados {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    justify-items: center;
+}
+
+.footer-características {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    gap: 60px;
+    color: #444;
+    
+
+}
+
+.caracteristica {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 180px;
+    text-align: center;
+}
+
+.caracteristica p {
+    font-size: 12px;
+    color: #444;
+    margin-top: 8px;
+}
+
+.caracteristica img {
+    width: 30px;
+    height: auto;
+    margin-bottom: 8px;
+}
+
+.suscribirse-redes {
+    background-color: #f4f4f4; /* fondo suave */
+    padding: 15px 10px;
+}
+
+.PRUEBA {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: auto;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.newsletter-formulario {
+    display: 1;
+    max-width: 60%;
+}
+
+.newsletter-formulario form {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.newsletter-formulario input {
+    padding: 8px;
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.newsletter-formulario button {
+    background-color: #bd202f;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.redes-sociales {
+    flex: 1;
+    max-width: 35%;
+    text-align: right;
+}
+.redes.sociales .iconos-redes {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.iconos-redes img {
+    width: auto;
+    height: 30px;
+
+}
+
+.footer-contacto-preguntas {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px 60px;
+  background-color: #2f5d9a; 
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-contacto-preguntas .contacto,
+.footer-contacto-preguntas .preguntas-frecuentes {
+  flex: 1;
+  max-width: 45%;
+}
+
+.footer-contacto-preguntas p:first-child {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+.footer-contacto-preguntas p {
+  margin: 5px 0;
+  color: #000;
+}
+
+.imagenes-pago {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding: 30px 0;
+}
+
+.imagenes-pago img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.imagen-productoX img, .imagen-productoY img, .imagen-productoZ img, .imagen-productoW img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover; 
+  border-radius: 8px;
+  display: block;
+}
