@@ -19,6 +19,83 @@ function addCarrito(id) {
         alert("Producto agregado al carrito")
         totalCompra += producto.precio;
         total.innerText = "Total: $" + totalCompra;
-        console.log(carritoArray);
+        calcularTotal();
+        
     }
+}
+
+//funcion para calcular el total de El carrito 
+function calcularTotal()
+{
+    let totalFactura = 0;
+    carritoArray.forEach( producto => {
+        totalFactura += producto.precio;
+    }
+    )
+    return totalFactura;
+}
+
+//Mostrar productos del carrito 
+function showCarrito()
+{
+    console.log(carritoArray);
+}
+
+
+
+//Funcion para mostrar el modal del carrito
+function mostrarModalCarrito() {
+  document.getElementById('modal_detalle_carrito').style.display = 'block';
+  const productsSection = document.getElementById('products');
+   const totalFactura = document.getElementById('totalFactura');
+   let cards = "";
+
+  carritoArray.forEach(producto => {
+    cards += `
+      <article class="producto-card" data-id="${producto.id}">
+        <img src="producto${producto.id}.jpg" alt="${producto.nombre}">
+        <h3>${producto.nombre}</h3>
+        <p class="precio">$${producto.precio.toLocaleString()}</p>
+      </article>
+    `;
+  });
+   
+  productsSection.innerHTML = cards;
+
+  const total = calcularTotal();
+  totalFactura.textContent = `Total: $${total.toLocaleString()}`;
+
+}
+
+function cerrarModal() {
+  document.getElementById('modal_detalle_carrito').style.display = 'none';
+}
+//funcioncion para mostrar  los productos de la lista en el html
+
+function mostrarProductosTienda() {
+  const tienda = document.getElementById("productos");
+  let cards = "";
+
+  productosDisponibles.forEach(producto => {
+    cards += `
+      <article class="producto-card" data-id="${producto.id}">
+        <img src="producto${producto.id}.jpg" alt="${producto.nombre}">
+        <h3>${producto.nombre}</h3>
+        <p class="precio">$${producto.precio.toLocaleString()}</p>
+        <button class="btn-agregar" onclick="addCarrito(${producto.id})">Agregar al carrito</button>
+      </article>
+    `;
+  });
+
+  tienda.innerHTML = cards;
+}
+
+//Funcion para vaciar productos del carrito y del localStorage
+function vaciarCarrito()
+{
+    carritoArray = [];
+    localStorage.removeItem("carrito");
+    totalCompra = 0;
+    total.innerText = "Total: $0";
+    alert("Carrito vaciado");
 }
